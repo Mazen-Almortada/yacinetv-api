@@ -1,12 +1,16 @@
 import requests
 import base64
 import time
+import os
 import json
+from dotenv import load_dotenv
+
+load_dotenv()
 
 class YacineTV:
 
-  api_url = "http://ver3.yacinelive.com"
-  key = "c!xZj+N9&G@Ev@vw"
+  api_url = os.getenv("API_URL")
+  key = os.getenv("API_KEY")
 
   def __init__(self):
     pass
