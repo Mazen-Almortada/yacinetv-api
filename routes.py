@@ -24,3 +24,7 @@ def events():
 @router.get("/event/{event_id}")
 def event(event_id: int):
     return ytv.get_event(event_id)
+
+@router.get("/search")
+def search(query: str):
+    return ytv.search(query)

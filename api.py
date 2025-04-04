@@ -51,3 +51,6 @@ class YacineTV:
   
   def get_event(self, event_id):
     return self.req(f"/api/event/{str(event_id)}")
+  
+  def search(self, query):
+      return self.req(f"/api/search?query={query}")
