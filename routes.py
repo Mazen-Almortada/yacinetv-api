@@ -1,8 +1,11 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from api import YacineTV
+from auth import verify_token 
 
 ytv = YacineTV()
-router = APIRouter(tags=["YacineTV"])
+router = APIRouter(tags=["YacineTV"],
+                    dependencies=[Depends(verify_token)]
+                   )
 
 
 @router.get("/categories")
